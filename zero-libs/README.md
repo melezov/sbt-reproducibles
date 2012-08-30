@@ -10,7 +10,7 @@ In the 0.12.x line, compiling a scala source file with libraryDependencies set t
     scala.tools.nsc.MissingRequirementError: object scala not found.
       at scala.tools.nsc.symtab.Definitions$definitions$.getModuleOrClass(Definitions.scala:655)
 
-It goes without saying that the error message is quice confusing, especially if it occured when porting
+It goes without saying that the error message is quice confusing, especially if it occurred when porting
 a 0.11.x project into 0.12.0, when it isn't immediately obvious what actually happened.
 
 Should this be the desired behavior?
