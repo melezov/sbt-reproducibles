@@ -13,4 +13,18 @@ In the 0.12.x line, compiling a scala source file with libraryDependencies set t
 It goes without saying that the error message is quice confusing, especially if it occurred when porting
 a 0.11.x project into 0.12.0, when it isn't immediately obvious what actually happened.
 
-Should this be the desired behavior?
+conclusion
+==========
+
+It was a misfeature to allow Scala code to be compiled without the scala-library on the classpath.
+
+The right way is to declare it as provided:
+
+    // don't automatically add the scala-library dependency in 'compile'
+    autoScalaLibrary := false
+
+    libraryDependencies +=
+      "org.scala-lang" % "scala-library" % "2.9.2" % "provided"
+
+For detailed information see the change summary for 0.12.0 here:
+https://github.com/harrah/xsbt/wiki/ChangeSummary_0.12.0
