@@ -1,0 +1,1 @@
+alias scalacFoo = ; set scalacOptions ++= Seq("-foo")
